@@ -1,6 +1,6 @@
 package Ui;
 
-import java.io.IOException;
+
 
 public interface UiListener {
 
@@ -20,8 +20,8 @@ public interface UiListener {
 
 	void onSaveAs(String pathToSave);
 
-	void onUndo() throws ClassNotFoundException, IOException;
+	void onUndo() ;
 
-	void onRedo() throws ClassNotFoundException, IOException;
+	void onRedo() ;
 
 }
