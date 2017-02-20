@@ -3,6 +3,5 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="core.jar"/>
-	<classpathentry kind="lib" path="/home/christine/eclipse/java-neon2/eclipse/qtjambi-linux64-community-4.8.7/qtjambi-4.8.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

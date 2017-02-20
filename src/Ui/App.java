@@ -1,4 +1,6 @@
 package Ui;
+import processing.core.PApplet;
+import processing.core.PImage;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -11,6 +13,8 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -21,6 +25,7 @@ import javax.swing.JPanel;
 import javax.swing.border.Border;
 
 import Controller.Controller;
+import Model.Rectangle;
 
 @SuppressWarnings("unused")
 public class App extends JFrame implements ActionListener, KeyEventDispatcher{
@@ -63,6 +68,9 @@ public class App extends JFrame implements ActionListener, KeyEventDispatcher{
 	private JPanel centerPanel;
 	private JPanel rightPanel;
 	private JPanel bottomPanel;
+	
+	//Create variable button
+	private JButton bntRect;
 	
 	//other variable
 	int screenWidth ;
@@ -154,10 +162,20 @@ public class App extends JFrame implements ActionListener, KeyEventDispatcher{
 		leftPanel.setPreferredSize(new Dimension(screenWidth/30, screenHeight-50));
 		leftPanel.setBackground(new Color(225,225,225));
 		
-		frameMain.add(leftPanel,BorderLayout.WEST);
+
+		//Form
+		Rectangle r = new Rectangle(20,20,new Color(123,34,123));	
+		bntRect = new JButton("");
+		leftPanel.add(bntRect);
+		
+		frameMain.add(leftPanel,BorderLayout.WEST);		
+		
 		
 	}
 	
+	
+
+
 	private void initCenter() {
 		centerPanel = new JPanel();
 		centerPanel.setPreferredSize(new Dimension(screenWidth/4, screenHeight/4));
