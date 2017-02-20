@@ -7,9 +7,9 @@ package Model;
  * @author Sandra
  *
  */
-public class Image {
+public class Image extends PApplet{
 	
-	//Constructeur par défaut
+	//Constructeur par dÃ©faut
 	public Image(){ }
 	
 	void Import(){};
