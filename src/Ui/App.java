@@ -161,12 +161,7 @@ public class App extends JFrame implements ActionListener, KeyEventDispatcher{
 		leftPanel = new JPanel();
 		leftPanel.setPreferredSize(new Dimension(screenWidth/30, screenHeight-50));
 		leftPanel.setBackground(new Color(225,225,225));
-		
-
-		//Form
-		Rectangle r = new Rectangle(20,20,new Color(123,34,123));	
-		bntRect = new JButton("");
-		leftPanel.add(bntRect);
+	
 		
 		frameMain.add(leftPanel,BorderLayout.WEST);		
 		
