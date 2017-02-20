@@ -1,6 +1,6 @@
 package Controller;
 
-
+import java.io.IOException;
 
 
 import Ui.App;
@@ -62,23 +62,23 @@ public class Controller implements UiListener {
 	}
 
 	@Override
-	public void onUndo()  {
+	public void onUndo() throws ClassNotFoundException, IOException {
 		undo();
 	}
 
 	@Override
-	public void onRedo()  {
+	public void onRedo() throws ClassNotFoundException, IOException {
 		redo();
 		
 	}
 
 
-	public void undo()  {
-		// TODO Auto-generated method stub
+	public void undo() throws ClassNotFoundException, IOException {
+
 	}
 
 
-	public void redo() {
+	public void redo() throws ClassNotFoundException, IOException{
 		// TODO Auto-generated method stub
 
 	}
