@@ -19,7 +19,7 @@ public class Image<Color> extends PApplet{
 	private String m_fileName;
 	private int m_width;
 	private int m_height;
-	private Color c;
+	private int c;	//couleur
 	
 	
 	//Constructeur par defaut
