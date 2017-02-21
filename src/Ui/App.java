@@ -1,6 +1,4 @@
 package Ui;
-import processing.core.PApplet;
-import processing.core.PImage;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -24,8 +22,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
-import Controller.Controller;
-import Model.Rectangle;
 
 @SuppressWarnings("unused")
 public class App extends JFrame implements ActionListener, KeyEventDispatcher{
@@ -35,11 +31,6 @@ public class App extends JFrame implements ActionListener, KeyEventDispatcher{
 	 */
 	private static final long serialVersionUID = 6945076473945649773L;
 
-	//Create event listener
-	private UiListener listener;
-	
-	//Create main area to draw
-	Sketch sketch;
 	
 	//Create variable to make Window Ui
 	private JFrame frameMain;
@@ -105,8 +96,6 @@ public class App extends JFrame implements ActionListener, KeyEventDispatcher{
 		back = new BorderLayout();
 		
 		frameMain.setLayout(back);
-		
-		
 		
 		//Top
 		initTop();
@@ -261,36 +250,39 @@ public class App extends JFrame implements ActionListener, KeyEventDispatcher{
 	@Override
 	public void actionPerformed(ActionEvent ev) {
 		if (ev.getSource() == newFile){
-			listener.onNewFile();
+			onNewFile();
 		}
 		else if (ev.getSource() == saveFile){
-			listener.onSaveFile();
+			onSaveFile();
 		}
 		else if (ev.getSource() == openFile){
-			listener.onOpenFile();
+			onOpenFile();
 		}
 		else if (ev.getSource() ==exportFile){
-			listener.onExportFile();
+			onExportFile();
 		}
 		else if (ev.getSource() ==exitApp){
-			listener.onExitApp();
+			onExitApp();
 		}
 		else if (ev.getSource() == undo){
-			listener.onRedo();
+			onUndo();
 		} 
 		else if (ev.getSource() == redo){			
-			listener.onRedo();
+			onRedo();
 		}
 		
 	}
 
-	public void addListener(UiListener listener) {
-		this.listener = listener;
-		this.listener.onInit(sketch.getWORKSHEET_HEIGHT(), sketch.getWORKSHEET_HEIGHT());
+
+
+	private void onExportFile() {
+		// TODO Auto-generated method stub
 		
 	}
 
-	public void askSave() {
+
+
+	private void onExitApp() {
 		int answer = showChoiceDialog("Voulez-vous sauvegarder?", "oui","non");
 		if( answer == 0){
 			onSaveAs();
@@ -298,6 +290,15 @@ public class App extends JFrame implements ActionListener, KeyEventDispatcher{
 		System.exit(0);
 		
 	}
+
+
+
+	private void onSaveAs() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 
 	private int showChoiceDialog(String text, String choice1, String choice2) {
 		Object[] options = {choice1,choice2};
@@ -308,38 +309,40 @@ public class App extends JFrame implements ActionListener, KeyEventDispatcher{
         else return 1;
 	}
 
-	private void onSaveAs() {
-		String PathToSave = null;
 
-		JFileChooser fc = new JFileChooser();
-		fc.setCurrentDirectory(new File(System.getProperty("user.home")));
-		int response = fc.showSaveDialog(App.this);
-		if(response == JFileChooser.APPROVE_OPTION){
-			PathToSave = fc.getSelectedFile().toString();
-			if (!PathToSave.isEmpty())
-			{
-				listener.onSaveAs(PathToSave);
-			}
-		}
-		else {
-			showMessageDialog("Sauvegarde annuler", "Ok");
-		}
 
-	}
-
-	private void showMessageDialog(String text, String buttonText) {
-		int dialogButton = JOptionPane.OK_OPTION;
-        JOptionPane.showMessageDialog (frameMain, text,"Information",0);
-
-        if(dialogButton == JOptionPane.OK_OPTION){ //The ISSUE is here
-        }
-
-	}
-
-	public void setCurrentUndoRedo(int current, int max) {
-		btnUndo.setEnabled(current > 0);
-		btnRedo.setEnabled(current < max - 1);
+	private void onUndo() {
+		// TODO Auto-generated method stub
 		
 	}
 
+
+
+	private void onRedo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	private void onOpenFile() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	private void onSaveFile() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	private void onNewFile() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 }

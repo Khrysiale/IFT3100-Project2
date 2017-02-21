@@ -16,7 +16,7 @@ import java.awt.Toolkit;
  */
 public class Screen {
 	
-	public static final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+	public final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	
 
 }
