@@ -10,10 +10,11 @@ import processing.core.PShapeSVG;
 
 /**
  * @author Sandra
+ * @param <Color>
  *
  */
 
-public class Image extends PApplet{
+public class Image<Color> extends PApplet{
 	//variables privees
 	private String m_fileName;
 	private int m_width;
@@ -92,5 +93,8 @@ public class Image extends PApplet{
 
 	}
 	
+	public void setup(){
+		
+	}
 
 }
