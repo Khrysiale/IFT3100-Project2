@@ -19,7 +19,7 @@ public class Image<Color> extends PApplet{
 	private String m_fileName;
 	private int m_width;
 	private int m_height;
-	private color c;
+	private Color c;
 	
 	
 	//Constructeur par defaut
@@ -84,10 +84,12 @@ public class Image<Color> extends PApplet{
 		colorMode(HSB, 360, 100, 100);	//teinte, saturation, luminosite
 	}
 	
-	void masquer(){
-		this.mask(this);
+	void masquer(PImage pImg){
+		this.mask(pImg);
 	}
 	
+
+
 	void teinter(){
 		tint(255, 0, 0, 255);
 
