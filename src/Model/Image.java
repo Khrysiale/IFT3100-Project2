@@ -3,6 +3,10 @@
  */
 package Model;
 
+import processing.core.PApplet;
+import processing.core.PImage;
+import processing.core.PShapeSVG;
+
 /**
  * @author Sandra
  *
@@ -11,20 +15,22 @@ package Model;
 public class Image extends PApplet{
 	//variables privees
 	private String m_fileName;
-	private int m_weight;
+	private int m_width;
 	private int m_height;
+	private color c;
 	
-	//Constructeur par défaut
+	
+	//Constructeur par defaut
 	public Image(){
-		m_weight = 512;
+		m_width = 512;
 		m_height = 512;
 		m_fileName = "";
 	}
 	
-	//Constructeur avec paramètres
- 	public Image(String pFileName, int pWeight, int pHeight, ) {
+	//Constructeur avec parametres
+ 	public Image(String pFileName, int pwidth, int pHeight) {
 		m_fileName = pFileName;
-		m_weight = pWeight;
+		m_width = pwidth;
 		m_height = pHeight;
 	}        
 	
@@ -35,8 +41,8 @@ public class Image extends PApplet{
 	}
 
   	//Retourne la largeur du fichier image
-	public int getWeight() {
-		return m_weight;
+	public int getWidth() {
+		return m_width;
 	}
    
   	// Retourne la hauteur du fichier image
@@ -46,25 +52,44 @@ public class Image extends PApplet{
 
 	//*************   MUTATEURS   *************
 	
-	//Définit le nom du fichier image
+	//Definit le nom du fichier image
 	public void setName(String pFileName) {
 		m_fileName = pFileName;
 	}
 
-	//Définit la largeur du fichier image
-	public void setWeight(int pWeight) {
-	    m_weight = pWeight;
+	//Definit la largeur du fichier image
+	public void setwidth(int pWidth) {
+		m_width = pWidth;
 	}
 
-	//Définit la largeur du fichier image
+	//Definit la largeur du fichier image
 	public void setHeight(int pHeight) {
 	    m_height = pHeight;
 	}
 	
 	//*************   METHODES   *************
-	Import(String pNom){};
-	Export(){};
-	ColorSpace(){};
-	Treatment(){};
+	public void Import(String pFileName){
+		String fileName = getFileName();
+		PImage img = loadImage(fileName);
+		image(img, 0, 0);
+	}
+	
+	public void Export(){
+		
+	}
+	
+	void espaceCouleur(){
+		colorMode(HSB, 360, 100, 100);	//teinte, saturation, luminosite
+	}
+	
+	void masquer(){
+		this.mask(this);
+	}
+	
+	void teinter(){
+		tint(255, 0, 0, 255);
+
+	}
+	
 
 }
