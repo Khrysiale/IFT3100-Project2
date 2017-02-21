@@ -264,11 +264,35 @@ public class App extends JFrame implements ActionListener, KeyEventDispatcher{
 		else if (ev.getSource() ==exitApp){
 			onExitApp();
 		}
+<<<<<<< HEAD
 		else if (ev.getSource() == undo){
 			onUndo();
 		} 
 		else if (ev.getSource() == redo){			
 			onRedo();
+=======
+		if (ev.getSource() == undo){
+			try {
+				listener.onUndo();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} 
+		else if (ev.getSource() == redo){
+			try {
+				listener.onRedo();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+>>>>>>> fb4f9776952c126e82bc0d24e169827cf675446f
 		}
 		
 	}
