@@ -1,39 +1,40 @@
-package Images;
 /**
- * 
+ * @author Sandra
+ * @param 
+ *
  */
 
+package Images;
 
 import processing.core.PApplet;
 import processing.core.PImage;
 import processing.core.PShapeSVG;
 
-/**
- * @author Sandra
- * @param <Color>
- *
- */
 
-public class Image<Color> extends PApplet{
+
+public class Images extends PApplet{
 	//variables privees
 	private String m_fileName;
 	private int m_width;
 	private int m_height;
-	private int c;	//couleur
+	private int m_c;	//couleur
+	//private String m_colorSpace = "HSB";	//teinte, saturation, luminosite
 	
 	
-	//Constructeur par defaut
-	public Image(){
+	/*//Constructeur par defaut
+	public Images(){
 		m_width = 512;
 		m_height = 512;
 		m_fileName = "";
-	}
+	}*/
 	
 	//Constructeur avec parametres
- 	public Image(String pFileName, int pwidth, int pHeight) {
+ 	public Images(String pFileName) {
 		m_fileName = pFileName;
-		m_width = pwidth;
-		m_height = pHeight;
+		m_width = width;
+		m_height = height;
+		//m_colorSpace = "HSB";
+		importImage(pFileName);
 	}        
 	
 	//*************   ACCESSEURS *************
@@ -70,33 +71,28 @@ public class Image<Color> extends PApplet{
 	}
 	
 	//*************   METHODES   *************
-	public void Import(String pFileName){
+	public void importImage(String pFileName){
 		String fileName = getFileName();
-		PImage img = loadImage(fileName);
+		PImage img = loadImage(pFileName);
 		image(img, 0, 0);
 	}
 	
-	public void Export(){
-		
+	public void exportImage(String pFileName){
+		saveFrame("pFileName"); 
 	}
 	
-	void espaceCouleur(){
+	/*void espaceCouleur(){
 		colorMode(HSB, 360, 100, 100);	//teinte, saturation, luminosite
-	}
+	}*/
 	
-	void masquer(PImage pImg){
+	void maskImage(PImage pImg){
 		this.mask(pImg);
 	}
 	
 
-
-	void teinter(){
+	void tintImage(int pTint, int, int){
+		colorMode(HSB);
 		tint(255, 0, 0, 255);
 
 	}
-	
-	public void setup(){
-		
-	}
-
 }
