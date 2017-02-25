@@ -76,12 +76,12 @@ public class Images {
 	//*************   METHODES   *************
 	public void importImage(String pFileName){
 		String fileName = getFileName();
-		PImage img = loadImage(pFileName);
-		image(img, 0, 0);
+		PImage img = parent.loadImage(pFileName);
+		parent.image(img, 0, 0);
 	}
 	
 	public void exportImage(String pFileName){
-		saveFrame("pFileName"); 
+		parent.saveFrame("pFileName"); 
 	}
 	
 	/*void espaceCouleur(){
@@ -89,7 +89,7 @@ public class Images {
 	}*/
 	
 	void maskImage(PImage pImg){
-		this.mask(pImg);
+		parent.mask(pImg);
 	}
 	
 /*
