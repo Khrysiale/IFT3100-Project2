@@ -12,8 +12,10 @@ import processing.core.PShapeSVG;
 
 
 
-public class Images extends PApplet{
+public class Images {
+	
 	//variables privees
+	private PApplet parent;
 	private String m_fileName;
 	private int m_width;
 	private int m_height;
@@ -29,10 +31,11 @@ public class Images extends PApplet{
 	}*/
 	
 	//Constructeur avec parametres
- 	public Images(String pFileName) {
+ 	public Images(PApplet p, String pFileName, int pwidth, int pHeight) {
 		m_fileName = pFileName;
-		m_width = width;
-		m_height = height;
+		m_width = pwidth;
+		m_height = pHeight;
+		parent = p;
 		//m_colorSpace = "HSB";
 		importImage(pFileName);
 	}        
