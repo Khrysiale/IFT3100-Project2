@@ -16,71 +16,65 @@ public class Images {
 	
 	//variables privees
 	private PApplet parent;
-	private String m_fileName;
-	private int m_width;
-	private int m_height;
-	private int m_c;	//couleur
+	private String fileName;
+	private int width;
+	private int height;
+	private int c;	//couleur
 	//private String m_colorSpace = "HSB";	//teinte, saturation, luminosite
 	
-	
-	/*//Constructeur par defaut
-	public Images(){
-		m_width = 512;
-		m_height = 512;
-		m_fileName = "";
-	}*/
-	
+		
 	//Constructeur avec parametres
- 	public Images(PApplet p, String pFileName, int pwidth, int pHeight) {
-		m_fileName = pFileName;
-		m_width = pwidth;
-		m_height = pHeight;
+ 	public Images(PApplet p, String pFileName) {
+		fileName = pFileName;
+		width = 0;
+		height = 0;
 		parent = p;
-		//m_colorSpace = "HSB";
-		importImage(pFileName);
-	}        
-	
+		
+ 	}
+ 	
+ 	
 	//*************   ACCESSEURS *************
 	//Retourne le nom du fichier image
 	public String getFileName() {  
-		return m_fileName;
+		return fileName;
 	}
 
   	//Retourne la largeur du fichier image
 	public int getWidth() {
-		return m_width;
+		return width;
 	}
    
   	// Retourne la hauteur du fichier image
 	public int getHeight() {
-		return m_height;
+		return height;
 	} 
 
 	//*************   MUTATEURS   *************
 	
 	//Definit le nom du fichier image
 	public void setName(String pFileName) {
-		m_fileName = pFileName;
+		fileName = pFileName;
 	}
 
 	//Definit la largeur du fichier image
 	public void setwidth(int pWidth) {
-		m_width = pWidth;
+		width = pWidth;
 	}
 
 	//Definit la largeur du fichier image
 	public void setHeight(int pHeight) {
-	    m_height = pHeight;
+	    height = pHeight;
 	}
 	
 	//*************   METHODES   *************
-	public void importImage(String pFileName){
-		String fileName = getFileName();
-		PImage img = parent.loadImage(pFileName);
-		parent.image(img, 0, 0);
+	public void imageImport(String pFileName){
+		BufferImages b = new BufferImages();
+		//PImage img = b. ;
+		//parent.imageMode(CENTER);
+		//parent.image(img, width/2, height/2, b.width, b.height);
 	}
 	
-	public void exportImage(String pFileName){
+	public void imageExport(String pFileName){
 		parent.saveFrame("pFileName"); 
 	}
 	
@@ -88,12 +82,12 @@ public class Images {
 		colorMode(HSB, 360, 100, 100);	//teinte, saturation, luminosite
 	}*/
 	
-	void maskImage(PImage pImg){
+	void imageMask(PImage pImg){
 		parent.mask(pImg);
 	}
 	
 /*
-	void tintImage(int pTint, int, int){
+	void imageTint(int pTint, int, int){
 		colorMode(HSB);
 		tint(255, 0, 0, 255);
 
