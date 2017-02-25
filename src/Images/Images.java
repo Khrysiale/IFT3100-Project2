@@ -68,7 +68,7 @@ public class Images {
 	
 	//*************   METHODES   *************
 	public void imageImport(String pFileName){
-		BufferImages b = new BufferImages();
+		//BufferImages b = new BufferImages();
 		//PImage img = b. ;
 		//parent.imageMode(CENTER);
 		//parent.image(img, width/2, height/2, b.width, b.height);
@@ -86,10 +86,10 @@ public class Images {
 		parent.mask(pImg);
 	}
 	
-/*
-	void imageTint(int pTint, int, int){
-		colorMode(HSB);
-		tint(255, 0, 0, 255);
 
-	}*/
-}
+	void imageTint(int pTint, int pColorMode){
+		parent.colorMode(pColorMode);
+		parent.tint(pTint);
+	}
+
+};

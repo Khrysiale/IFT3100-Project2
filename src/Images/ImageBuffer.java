@@ -7,14 +7,17 @@ import javax.imageio.ImageIO;
 
 public class ImageBuffer {
 	
-	//creer un buffer a partir dune image importee au format:bmp, gif, png, jpeg
-	BufferedImage source = ImageIO.read(new File("winni.png"));
+	public ImageBuffer(){
+		
+	}
 	
-	//
-	BufferedImage dest = new BufferedImage(source.getWidth(), source.getHeight(),
-											source.getType());
+	//creer un buffer pour image importee
+	//BufferedImage image = ImageIO.read(new File("winni.png"));
+	
+	//creer un nouveau buffer
+	BufferedImage source = new BufferedImage(512, 512, BufferedImage.TYPE_CUSTOM);											
 	
 	//sauvegarde le buffer vers un fichier image
-	ImageIO.write( source, "GIF", new File("winni.gif"));
+	//ImageIO.write(image, "GIF", new File("winni.gif"));
 
-}
+};
