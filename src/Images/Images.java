@@ -89,10 +89,10 @@ public class Images extends PApplet{
 		this.mask(pImg);
 	}
 	
-
+/*
 	void tintImage(int pTint, int, int){
 		colorMode(HSB);
 		tint(255, 0, 0, 255);
 
-	}
+	}*/
 }

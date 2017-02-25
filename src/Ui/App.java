@@ -4,33 +4,48 @@ import javax.swing.JFrame;
 
 import processing.core.PApplet;
 
-public class App extends PApplet{
+public class App {
+	
+	 PApplet p; 
 	
 	//other variable
 	int screenWidth ;
 	int screenHeight ;
 	
-	
+	JFrame frame;
 	
 
-	public App(double width, double height){
-		screenWidth = (int) width;
-		screenHeight = (int) height;
-		
-		
-
+	public App(PApplet parent){
+		p= parent;
+		p.text("test", 10, 30);
 	}
 	
-	public void setup()
+	public void settings()
 	{
-	  size(screenWidth, screenHeight);
-	  JFrame frame =new JFrame("Controls");
+	 /* frame =new JFrame("Controls");
+	  frame.setBounds(0, 0,(int)(width/2), (int)(height-height/5));
 	  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	  frame.setTitle("Titre de notre projet");
 
 	  
 
 	  //Display the window.
 	  frame.pack();
-	  frame.setVisible(true);
+	  frame.setVisible(true);*/
+	  
 	}
+	
+	public void setup(){
+		//fill(255);
+	}
+	
+	public void display(){
+		
+	}
+	
+	public void run(){
+		
+	}
+	
+	
 }
