@@ -16,7 +16,7 @@ public class App {
 	
 
 	public App(PApplet parent){
-		p= parent;
+		p = parent;
 		p.text("test", 10, 30);
 	}
 	
