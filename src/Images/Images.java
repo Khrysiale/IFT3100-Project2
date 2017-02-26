@@ -2,6 +2,7 @@
  * @author Sandra
  * @param 
  *
+ * precondtion: le fichier image doit être sauvegarde dans le package data
  */
 
 package Images;
