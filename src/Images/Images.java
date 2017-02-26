@@ -82,6 +82,7 @@ public class Images {
 
 	public PImage ImageImport(String pFileName){
 		
+<<<<<<< HEAD
 	PImage img = parent.loadImage(pFileName);
 		//creer un buffer pour image importee
 	//BufferedImage image = ImageIO.read(new File("pFileName"));
@@ -93,6 +94,10 @@ public class Images {
 	//ImageIO.write(image, "GIF", new File("winni.gif"));
 	return img;
 }
+=======
+	}
+
+>>>>>>> origin/master
 	
 	public void imageExport(String pFileName){
 		parent.saveFrame("pFileName"); 
