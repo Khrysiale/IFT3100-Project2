@@ -18,6 +18,7 @@ public class Images {
 	private String fileName;
 	private int width;
 	private int height;
+	private PImage image;
 		
 	//Constructeur
  	public Images(PApplet p, String pFileName) {
@@ -31,17 +32,15 @@ public class Images {
  		parent.size(512, 512);
  		parent.background(255);
  		//parent.colorMode(HSB, 360, 100, 100);	//teinte, saturation, luminosite
+ 		image = ImageImport(fileName);
+		if (image ==null) {
+	      System.out.println ("failed");
+		}		
  				
  	}
  	
  	
  	public void draw(){
- 		PImage image = new PImage(); 
-		image = parent.loadImage(getFileName());
-	    if (image ==null) {
-	      System.out.println ("failed");
-	  }		
-		
  		parent.imageMode(parent.CENTER);
  		parent.image(image, width/2, height/2, width/2, height/2);
  	}
@@ -76,33 +75,36 @@ public class Images {
 
 	//Definit la largeur du fichier image
 	public void setHeight(int pHeight) {
-	    height = pHeight;
+		height = pHeight;
 	}
-	
+
 	//*************   METHODES   *************
 
 	public PImage ImageImport(String pFileName){
+
 		PImage image = new PImage(); 
 		image = parent.loadImage(getFileName());
-	    if (image ==null) {
-	      System.out.println ("failed");
-	  }		
-	    return image;
+		if (image ==null) {
+			System.out.println ("failed");
+		}		
+		return image;
+
 	}
 
-	
+
+
 	public void imageExport(String pFileName){
 		parent.saveFrame("pFileName"); 
 	}
-	
+
 	/*void espaceCouleur(){
 		colorMode(HSB, 360, 100, 100);	//teinte, saturation, luminosite
 	}*/
-	
+
 	void imageMask(PImage pImg){
 		parent.mask(pImg);
 	}
-	
+
 
 	void imageTint(int pTint, int pColorMode){
 		parent.colorMode(pColorMode);
