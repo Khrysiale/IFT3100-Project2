@@ -38,7 +38,7 @@ public class App {
 	}
 	
 	public void setup(){
-		img = new Images(p, "winnie.png");
+		img = new Images(p, "https://3.bp.blogspot.com/-W__wiaHUjwI/Vt3Grd8df0I/AAAAAAAAA78/7xqUNj8ujtY/s1600/image02.png");
 	}
 	
 	public void draw(){

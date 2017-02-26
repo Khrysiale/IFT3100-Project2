@@ -18,6 +18,7 @@ public class Images {
 	private String fileName;
 	private int width;
 	private int height;
+	private PImage image;
 		
 	//Constructeur
  	public Images(PApplet p, String pFileName) {
@@ -31,17 +32,15 @@ public class Images {
  		parent.size(512, 512);
  		parent.background(255);
  		//parent.colorMode(HSB, 360, 100, 100);	//teinte, saturation, luminosite
+ 		image = ImageImport(fileName);
+		if (image ==null) {
+	      System.out.println ("failed");
+		}		
  				
  	}
  	
  	
  	public void draw(){
- 		PImage image = new PImage(); 
-		image = parent.loadImage(getFileName());
-	    if (image ==null) {
-	      System.out.println ("failed");
-	  }		
-		
  		parent.imageMode(parent.CENTER);
  		parent.image(image, width/2, height/2, width/2, height/2);
  	}
@@ -81,17 +80,19 @@ public class Images {
 	
 	//*************   METHODES   *************
 
-	public void ImageImport(String pFileName){
+	public PImage ImageImport(String pFileName){
 		
-	//creer un buffer pour image importee
-	BufferedImage image = ImageIO.read(new File("pFileName"));
+	PImage img = parent.loadImage(pFileName);
+		//creer un buffer pour image importee
+	//BufferedImage image = ImageIO.read(new File("pFileName"));
 	
 	//creer un nouveau buffer
 	//BufferedImage source = new BufferedImage(512, 512, BufferedImage.TYPE_CUSTOM);											
 	
 	//sauvegarde le buffer vers un fichier image
 	//ImageIO.write(image, "GIF", new File("winni.gif"));
-
+	return img;
+}
 	
 	public void imageExport(String pFileName){
 		parent.saveFrame("pFileName"); 
