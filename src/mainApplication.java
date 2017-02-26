@@ -5,7 +5,7 @@ import processing.core.PApplet;
 
 
 public class mainApplication extends PApplet{
-	App[] ui = new App[50];
+	App ui;
 
 	public static void main(String[] args) {
 		PApplet.main("mainApplication");
@@ -16,17 +16,12 @@ public class mainApplication extends PApplet{
 		size((int)screen.screenSize.getWidth()/2,(int)screen.screenSize.getHeight()/2);
 	}
 	
-	public void setup(){
-		for(int i = 0; i < ui.length; i++){
-			ui[i] = new App(this);
-		}
-		
+	public void setup(){		
+			ui = new App(this);		
 	}
 	
 	public void draw(){
-		for(int i = 0; i < ui.length; i++){
-			ui[i].display();
-		}
+		ui.display();
 	}
 
 }
