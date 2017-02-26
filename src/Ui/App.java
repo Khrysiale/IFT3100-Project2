@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import Images.Images;
 import processing.core.PApplet;
 
-public class App {
+public class App  {
 	
 	 PApplet p; 
 	 
@@ -42,16 +42,15 @@ public class App {
 	}
 	
 	public void draw(){
-		p.translate(50,50);
-		img.draw();
+			
 	}
 	
 	public void display(){
 		p.fill(255,100);
-		p.rect(100, 100, 100, p.height);
-		
+		//p.rect(100, 100, 100, p.height);
+		p.image(img.ImageImport("https://us.123rf.com/450wm/mettus/mettus1312/mettus131200502/24740422-lettre-s-dans-l-illustration-d-incendie.jpg?ver=6"), 50, 50);
 	}
-	
+
 	public void run(){
 		
 	}

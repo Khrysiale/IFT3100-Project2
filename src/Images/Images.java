@@ -81,8 +81,13 @@ public class Images {
 	
 	//*************   METHODES   *************
 
-	public void ImageImport(String pFileName){
-		
+	public PImage ImageImport(String pFileName){
+		PImage image = new PImage(); 
+		image = parent.loadImage(getFileName());
+	    if (image ==null) {
+	      System.out.println ("failed");
+	  }		
+	    return image;
 	}
 
 	

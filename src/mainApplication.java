@@ -25,7 +25,7 @@ public class mainApplication extends PApplet{
 	
 	public void draw(){
 		for(int i = 0; i < ui.length; i++){
-			ui[0].display();
+			ui[i].display();
 		}
 	}
 
