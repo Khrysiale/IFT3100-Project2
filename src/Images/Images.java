@@ -10,7 +10,7 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import processing.core.PShapeSVG;
 
-
+import Images.ImageBuffer;
 
 public class Images {
 	
@@ -68,7 +68,8 @@ public class Images {
 	
 	//*************   METHODES   *************
 	public void imageImport(String pFileName){
-		//BufferImages b = new BufferImages();
+		ImageBuffer b = new ImageBuffer(pFileName);
+		PImage imp = b.
 		//PImage img = b. ;
 		//parent.imageMode(CENTER);
 		//parent.image(img, width/2, height/2, b.width, b.height);
