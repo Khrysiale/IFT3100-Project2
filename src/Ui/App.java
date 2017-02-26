@@ -2,11 +2,14 @@ package Ui;
 
 import javax.swing.JFrame;
 
+import Images.Images;
 import processing.core.PApplet;
 
 public class App {
 	
 	 PApplet p; 
+	 
+	 Images img ;
 	
 	//other variable
 	int screenWidth ;
@@ -17,7 +20,6 @@ public class App {
 
 	public App(PApplet parent){
 		p = parent;
-		p.text("test", 10, 30);
 	}
 	
 	public void settings()
@@ -36,7 +38,12 @@ public class App {
 	}
 	
 	public void setup(){
-		//fill(255);
+		img = new Images(p, "winnie.png");
+	}
+	
+	public void draw(){
+		p.translate(50,50);
+		img.draw();		
 	}
 	
 	public void display(){

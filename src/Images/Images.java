@@ -8,7 +8,7 @@ package Images;
 
 import processing.core.PApplet;
 import processing.core.PImage;
-import processing.core.PShapeSVG;
+
 //import ImageBuffer;
 
 public class Images {
@@ -40,9 +40,14 @@ public class Images {
  	
  	
  	public void draw(){
- 		PImage img = imageImport(fileName);
+ 		PImage image = new PImage(); 
+		image = parent.loadImage(getFileName());
+	    if (image ==null) {
+	      System.out.println ("failed");
+	  }		
+		
  		parent.imageMode(parent.CENTER);
- 		parent.image(img, width/2, height/2, width/2, height/2);
+ 		parent.image(image, width/2, height/2, width/2, height/2);
  	}
  	
 	//*************   ACCESSEURS *************
@@ -80,14 +85,7 @@ public class Images {
 	
 	//*************   METHODES   *************
 
-	public PImage imageImport(String pFileName){
-		PImage image = parent.loadImage(pFileName);
-				
-		//parent.imageMode(CENTER);
-		//parent.image(img, width/2, height/2, b.width, b.height);
-		
-		return image;
-	}
+	
 	
 	public void imageExport(String pFileName){
 		parent.saveFrame("pFileName"); 

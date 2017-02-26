@@ -17,6 +17,7 @@ public class mainApplication extends PApplet{
 	
 	public void setup(){
 		App ui = new App(this);
+		
 	}
 	
 	public void draw(){
