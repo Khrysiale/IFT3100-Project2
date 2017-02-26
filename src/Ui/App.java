@@ -39,7 +39,6 @@ public class App  {
 	
 	public void setup(){
 		p.size(200, 200);
-
 	}
 	
 	public void draw(){
