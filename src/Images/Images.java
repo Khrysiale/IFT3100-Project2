@@ -15,42 +15,21 @@ public class Images {
 	
 	//variables privees
 	private PApplet parent;
-	private String fileName;
 	private int width;
 	private int height;
 	private PImage image;
 		
 	//Constructeur
- 	public Images(PApplet p, String pFileName) {
-		fileName = pFileName;
+ 	public Images(PApplet p) {
+		
 		width = 0;
 		height = 0;
 		parent = p;
  	}
  	
- 	public void setup(){
- 		parent.size(512, 512);
- 		parent.background(255);
- 		//parent.colorMode(HSB, 360, 100, 100);	//teinte, saturation, luminosite
- 		image = ImageImport(fileName);
- 		parent.getSurface().setSize(image.width,image.height);
-		if (image ==null) {
-	      System.out.println ("failed");
-		}		
- 				
- 	}
- 	
- 	
- 	public void draw(){
- 		parent.imageMode(parent.CENTER);
- 		parent.image(image, width/2, height/2, width/2, height/2);
- 	}
  	
 	//*************   ACCESSEURS *************
-	//Retourne le nom du fichier image
-	public String getFileName() {  
-		return fileName;
-	}
+	
 
   	//Retourne la largeur du fichier image
 	public int getWidth() {
@@ -64,10 +43,7 @@ public class Images {
 
 	//*************   MUTATEURS   *************
 	
-	//Definit le nom du fichier image
-	public void setName(String pFileName) {
-		fileName = pFileName;
-	}
+	
 
 	//Definit la largeur du fichier image
 	public void setwidth(int pWidth) {
@@ -84,7 +60,7 @@ public class Images {
 	public PImage ImageImport(String pFileName){
 
 		PImage image = new PImage(); 
-		image = parent.loadImage(getFileName());
+		image = parent.loadImage(pFileName);
 		if (image ==null) {
 			System.out.println ("failed");
 		}		
