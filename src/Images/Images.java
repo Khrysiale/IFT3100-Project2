@@ -17,11 +17,10 @@ public class Images {
 	private PApplet parent;
 	private int width;
 	private int height;
-	private PImage image;
+	
 		
 	//Constructeur
- 	public Images(PApplet p) {
-		
+ 	public Images(PApplet p) {		
 		width = 0;
 		height = 0;
 		parent = p;
