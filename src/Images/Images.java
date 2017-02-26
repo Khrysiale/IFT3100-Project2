@@ -9,8 +9,7 @@ package Images;
 import processing.core.PApplet;
 import processing.core.PImage;
 import processing.core.PShapeSVG;
-
-import Images.ImageBuffer;
+//import ImageBuffer;
 
 public class Images {
 	
@@ -19,8 +18,7 @@ public class Images {
 	private String fileName;
 	private int width;
 	private int height;
-	private int c;	//couleur
-	//private String m_colorSpace = "HSB";	//teinte, saturation, luminosite
+//	private int color;	
 	
 		
 	//Constructeur avec parametres
@@ -30,8 +28,22 @@ public class Images {
 		height = 0;
 		parent = p;
 		
+		
  	}
  	
+ 	public void setup(){
+ 		parent.size(512, 512);
+ 		parent.background(255);
+ 		//parent.colorMode(HSB, 360, 100, 100);	//teinte, saturation, luminosite
+ 				
+ 	}
+ 	
+ 	
+ 	public void draw(){
+ 		PImage img = imageImport(fileName);
+ 		parent.imageMode(parent.CENTER);
+ 		parent.image(img, width/2, height/2, width/2, height/2);
+ 	}
  	
 	//*************   ACCESSEURS *************
 	//Retourne le nom du fichier image
@@ -67,12 +79,14 @@ public class Images {
 	}
 	
 	//*************   METHODES   *************
-	public void imageImport(String pFileName){
-		ImageBuffer b = new ImageBuffer(pFileName);
-		PImage imp = b.
-		//PImage img = b. ;
+
+	public PImage imageImport(String pFileName){
+		PImage image = parent.loadImage(pFileName);
+				
 		//parent.imageMode(CENTER);
 		//parent.image(img, width/2, height/2, b.width, b.height);
+		
+		return image;
 	}
 	
 	public void imageExport(String pFileName){
