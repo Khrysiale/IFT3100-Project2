@@ -43,10 +43,12 @@ public class App {
 	
 	public void draw(){
 		p.translate(50,50);
-		img.draw();		
+		img.draw();
 	}
 	
 	public void display(){
+		p.fill(255,100);
+		p.rect(100, 100, 100, p.height);
 		
 	}
 	
