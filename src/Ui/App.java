@@ -38,7 +38,8 @@ public class App  {
 	}
 	
 	public void setup(){
-		img = new Images(p, "https://3.bp.blogspot.com/-W__wiaHUjwI/Vt3Grd8df0I/AAAAAAAAA78/7xqUNj8ujtY/s1600/image02.png");
+		p.size(200, 200);
+
 	}
 	
 	public void draw(){
@@ -48,6 +49,7 @@ public class App  {
 	public void display(){
 		p.fill(255,100);
 		//p.rect(100, 100, 100, p.height);
+		img = new Images(p,"https://us.123rf.com/450wm/mettus/mettus1312/mettus131200502/24740422-lettre-s-dans-l-illustration-d-incendie.jpg?ver=6");
 		p.image(img.ImageImport("https://us.123rf.com/450wm/mettus/mettus1312/mettus131200502/24740422-lettre-s-dans-l-illustration-d-incendie.jpg?ver=6"), 50, 50);
 	}
 

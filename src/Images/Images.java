@@ -33,6 +33,7 @@ public class Images {
  		parent.background(255);
  		//parent.colorMode(HSB, 360, 100, 100);	//teinte, saturation, luminosite
  		image = ImageImport(fileName);
+ 		parent.getSurface().setSize(image.width,image.height);
 		if (image ==null) {
 	      System.out.println ("failed");
 		}		
