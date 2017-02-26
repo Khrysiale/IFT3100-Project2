@@ -18,17 +18,13 @@ public class Images {
 	private String fileName;
 	private int width;
 	private int height;
-//	private int color;	
-	
 		
-	//Constructeur avec parametres
+	//Constructeur
  	public Images(PApplet p, String pFileName) {
 		fileName = pFileName;
 		width = 0;
 		height = 0;
 		parent = p;
-		
-		
  	}
  	
  	public void setup(){
@@ -85,7 +81,17 @@ public class Images {
 	
 	//*************   METHODES   *************
 
+	public void ImageImport(String pFileName){
+		
+	//creer un buffer pour image importee
+	BufferedImage image = ImageIO.read(new File("pFileName"));
 	
+	//creer un nouveau buffer
+	//BufferedImage source = new BufferedImage(512, 512, BufferedImage.TYPE_CUSTOM);											
+	
+	//sauvegarde le buffer vers un fichier image
+	//ImageIO.write(image, "GIF", new File("winni.gif"));
+
 	
 	public void imageExport(String pFileName){
 		parent.saveFrame("pFileName"); 
