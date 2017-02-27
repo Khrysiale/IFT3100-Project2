@@ -81,14 +81,14 @@ public class Images {
 	 * image 2 est en niveau de gris
 	 * retourne image masquee par une autre image
 	 * */
-	public PImage imageMask(PImage img1, PImage img2){
-		PImage image1 = img1;
-		PImage maskImage = img2;
+	public PImage imageMask(PImage pImg1, PImage pImg2){
+		PImage image1 = pImg1;
+		PImage maskImage = pImg2;
 		
 		maskImage.resize(image1.width, image1.height);
-		maskImage.filter(PConstants.GRAY);
+		//maskImage.filter(PConstants.GRAY);//plutot le filtrage, une autre methode
 		image1.mask(maskImage);
-		parent.image(image1,0,0);
+
 		return image1;
 	}
 

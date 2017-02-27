@@ -4,12 +4,12 @@ import Utils.Screen;
 import processing.core.PApplet;
 
 
-public class Sankhrys extends PApplet{
+public class mainApplication extends PApplet{//public class Sankhrys extends PApplet{
 	App app;
 
 	
 	public static void main(String[] args) {
-		PApplet.main("Sankhrys");
+		PApplet.main("mainApplication");
 	}
 	
 	public void settings(){

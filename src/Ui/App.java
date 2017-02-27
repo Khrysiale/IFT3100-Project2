@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 
 import Images.Images;
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class App  {
 	
@@ -52,8 +53,11 @@ public class App  {
 		//p.image(img.ImageImport("https://us.123rf.com/450wm/mettus/mettus1312/mettus131200502/24740422-lettre-s-dans-l-illustration-d-incendie.jpg?ver=6"), 50, 50);
 		//p.image(img.imageImport("data/winni.png"), 50, 50);
 	
-		Images img3 = new Images(p);
-		//p.image(img3.imageMask(img3.imageImport("data/winni.png"), img3.imageImport("data/tigrou.png"), 50, 50);
+		img = new Images(p);
+		PImage img1 = img.imageImport("data/winni.png");
+		PImage img2 = img.imageImport("data/tigrou.png");
+		PImage img3 = img.imageMask(img1, img2);
+		p.image(img3, 50, 50);
 		
 		
 		
