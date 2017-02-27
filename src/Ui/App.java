@@ -39,7 +39,7 @@ public class App  {
 	}
 	
 	public void setup(){
-		p.size(200, 200);
+		p.size(512, 512);
 	}
 	
 	public void draw(){
@@ -54,8 +54,8 @@ public class App  {
 		//p.image(img.imageImport("data/winni.png"), 50, 50);
 	
 		img = new Images(p);
-		PImage img1 = img.imageImport("data/winni.png");
-		PImage img2 = img.imageImport("data/tigrou.png");
+		PImage img1 = img.imageImport("data/Gorille.jpg");
+		PImage img2 = img.imageImport("data/Canard.jpg");
 		PImage img3 = img.imageMask(img1, img2);
 		p.image(img3, 50, 50);
 		

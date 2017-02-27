@@ -85,7 +85,9 @@ public class Images {
 		PImage image1 = pImg1;
 		PImage maskImage = pImg2;
 		
-		maskImage.resize(image1.width, image1.height);
+		image1.resize(512, 512);
+		maskImage.resize(512, 512);
+		//maskImage.resize(image1.width, image1.height); // BON
 		//maskImage.filter(PConstants.GRAY);//plutot le filtrage, une autre methode
 		image1.mask(maskImage);
 
