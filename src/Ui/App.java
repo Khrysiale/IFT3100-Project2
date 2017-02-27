@@ -1,20 +1,19 @@
 package Ui;
 
+import java.awt.Button;
+
 import javax.swing.JFrame;
 
 import Images.Images;
 import processing.core.PApplet;
 
-public class App  {
+
+public class App {
 	
-	 PApplet p; 
-	 
-	 Images img ;
 	
-	//other variable
-	int screenWidth ;
-	int screenHeight ;
+	Images img ;	
 	
+	PApplet p;
 	JFrame frame;
 	
 
@@ -22,37 +21,31 @@ public class App  {
 		p = parent;
 	}
 	
-	public void settings()
-	{
-	 /* frame =new JFrame("Controls");
-	  frame.setBounds(0, 0,(int)(width/2), (int)(height-height/5));
-	  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	  frame.setTitle("Titre de notre projet");
-
-	  
-
-	  //Display the window.
-	  frame.pack();
-	  frame.setVisible(true);*/
-	  
-	}
-	
-	public void setup(){
-		p.size(200, 200);
-	}
-	
-	public void draw(){
-			
-	}
+		
 	
 	public void display(){
-		p.fill(255,100);		
-		img = new Images(p);
-		p.image(img.ImageImport("data/winni.png"), 50, 50);
-	}
-
-	public void run(){
+		Menu[] menuList = new Menu[10];
 		
+		Menu file = new Menu(p,"Fichier", 0, 0);		
+		menuList[1] = file;		
+		
+		Menu edit = new Menu(p, "Éditer", 60,0);
+		menuList[2] = edit;
+		
+		Menu tool = new Menu(p, "Outils",120,0);
+		menuList[3] = tool;
+		
+		
+		for(int i = 0; i < menuList.length; i++){
+			menuList[i].display();
+			
+		}
+		
+		
+		
+		/*p.fill(255,100);		
+		img = new Images(p);
+		p.image(img.ImageImport("data/winni.png"), 50, 50);*/
 	}
 	
 	

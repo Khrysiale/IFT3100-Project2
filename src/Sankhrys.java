@@ -4,24 +4,26 @@ import Utils.Screen;
 import processing.core.PApplet;
 
 
-public class mainApplication extends PApplet{
-	App ui;
+public class Sankhrys extends PApplet{
+	App app;
 
+	
 	public static void main(String[] args) {
-		PApplet.main("mainApplication");
+		PApplet.main("Sankhrys");
 	}
 	
 	public void settings(){
 		Screen screen = new Screen();
-		size((int)screen.screenSize.getWidth()/2,(int)screen.screenSize.getHeight()/2);
+		size(1024,968);
 	}
 	
 	public void setup(){		
-		ui = new App(this);		
+		app = new App(this);		
 	}
 	
 	public void draw(){
-		ui.display();
+		app.display();
 	}
+
 
 }
