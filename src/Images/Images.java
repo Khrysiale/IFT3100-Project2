@@ -2,12 +2,13 @@
  * @author Sandra
  * @param 
  *
- * precondtion: le fichier image doit être sauvegarde dans le package data
+ * precondtion: le fichier image doit ï¿½tre sauvegarde dans le package data
  */
 
 package Images;
 
 import processing.core.PApplet;
+import processing.core.PConstants;
 import processing.core.PImage;
 
 //import ImageBuffer;
@@ -18,10 +19,11 @@ public class Images {
 	private PApplet parent;
 	private int width;
 	private int height;
+
 	
 		
 	//Constructeur
- 	public Images(PApplet p) {		
+ 	public Images(PApplet p) {
 		width = 0;
 		height = 0;
 		parent = p;
@@ -30,7 +32,6 @@ public class Images {
  	
 	//*************   ACCESSEURS *************
 	
-
   	//Retourne la largeur du fichier image
 	public int getWidth() {
 		return width;
@@ -43,8 +44,6 @@ public class Images {
 
 	//*************   MUTATEURS   *************
 	
-	
-
 	//Definit la largeur du fichier image
 	public void setwidth(int pWidth) {
 		width = pWidth;
@@ -57,7 +56,7 @@ public class Images {
 
 	//*************   METHODES   *************
 
-	public PImage ImageImport(String pFileName){
+	public PImage imageImport(String pFileName){
 
 		PImage image = new PImage(); 
 		image = parent.loadImage(pFileName);
@@ -68,8 +67,6 @@ public class Images {
 
 	}
 
-
-
 	public void imageExport(String pFileName){
 		parent.saveFrame("pFileName"); 
 	}
@@ -78,14 +75,26 @@ public class Images {
 		colorMode(HSB, 360, 100, 100);	//teinte, saturation, luminosite
 	}*/
 
-	void imageMask(PImage pImg){
-		parent.mask(pImg);
+	
+	/* param [in] 2 fichiers image
+	 * les 2 images doivent avoir le meme size
+	 * image 2 est en niveau de gris
+	 * retourne image masquee par une autre image
+	 * */
+	public PImage imageMask(PImage img1, PImage img2){
+		PImage image1 = img1;
+		PImage maskImage = img2;
+		
+		maskImage.resize(image1.width, image1.height);
+		maskImage.filter(PConstants.GRAY);
+		image1.mask(maskImage);
+		parent.image(image1,0,0);
+		return image1;
 	}
 
 
-	void imageTint(int pTint, int pColorMode){
-		parent.colorMode(pColorMode);
-		parent.tint(pTint);
-	}
+	//void imageTint(String){
+	//	parent.tint(pTint);
+	//}
 
 };
