@@ -50,7 +50,8 @@ public class App  {
 		//p.rect(100, 100, 100, p.height);
 		img = new Images(p);
 		//p.image(img.ImageImport("https://us.123rf.com/450wm/mettus/mettus1312/mettus131200502/24740422-lettre-s-dans-l-illustration-d-incendie.jpg?ver=6"), 50, 50);
-		p.image(img.ImageImport("data/winni.png"), 50, 50);
+		p.image(img.imageImport("data/winni.png"), 50, 50);
+		//p.image(img.imageMask(img, img), 50, 50);
 	}
 
 	public void run(){
