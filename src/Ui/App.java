@@ -55,7 +55,7 @@ public class App  {
 	
 		img = new Images(p);
 		PImage img1 = img.imageImport("data/Gorille.jpg");
-		PImage img2 = img.imageImport("data/Canard.jpg");
+		PImage img2 = img.imageImport("data/canard.jpg");
 		PImage img3 = img.imageMask(img1, img2);
 		p.image(img3, 50, 50);
 		
