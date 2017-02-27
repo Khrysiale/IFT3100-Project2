@@ -2,7 +2,7 @@
  * @author Sandra
  * @param 
  *
- * precondtion: le fichier image doit être sauvegarde dans le package data
+ * precondtion: le fichier image doit ï¿½tre sauvegarde dans le package data
  */
 
 package Images;
@@ -19,7 +19,8 @@ public class Images {
 	private PApplet parent;
 	private int width;
 	private int height;
-	//private PImage image;
+
+	
 		
 	//Constructeur
  	public Images(PApplet p) {
