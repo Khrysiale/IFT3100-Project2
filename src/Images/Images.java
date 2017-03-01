@@ -67,9 +67,11 @@ public class Images {
 
 	}
 
-	public void imageExport(String pFileName){
-		parent.saveFrame("pFileName"); 
-	}
+	//public void imageExport(PImage pImg, String pFileName ){
+		//PImage newImg = parent.createImage(100, 100, PConstants.HSB);
+		//newImg = pImg.get();
+		//newImg.save("pFileName");
+	//}
 
 	/*void espaceCouleur(){
 		colorMode(HSB, 360, 100, 100);	//teinte, saturation, luminosite
@@ -99,4 +101,4 @@ public class Images {
 	//	parent.tint(pTint);
 	//}
 
-};
+}
