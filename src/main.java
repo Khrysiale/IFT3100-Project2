@@ -1,10 +1,12 @@
 import Application.ApplicationController;
+import Application.ApplicationUi;
 
 public class main {
 
 	public static void main(String[] args) {
-		ApplicationController controller = new ApplicationController();
-		controller.pack();
+		ApplicationUi ui = new ApplicationUi();
+		ApplicationController controller = new ApplicationController(ui);
+		
 	}
 
 }
