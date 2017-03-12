@@ -1,12 +1,10 @@
-import Application.ApplicationController;
-import Application.ApplicationUi;
 
-public class main {
+public class Main {
 
 	public static void main(String[] args) {
-		ApplicationUi ui = new ApplicationUi();
-		ApplicationController controller = new ApplicationController(ui);
-		
+		PrincipalWindow frame = new PrincipalWindow();
+		frame.setVisible(true);
+
 	}
 
 }
