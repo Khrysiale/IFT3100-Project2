@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -8,7 +9,6 @@ import java.awt.event.ItemListener;
 import java.awt.geom.Point2D;
 import java.io.Serializable;
 
-import javafx.scene.control.Dialog;
 
 //Figure
 /* dont derive toutes les formes,
