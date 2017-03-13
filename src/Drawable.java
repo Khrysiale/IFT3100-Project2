@@ -11,7 +11,7 @@ public class Drawable extends JPanel{
 	public static final int dim = 0;
 	Point position1;
 	Point position2;
-	Figure fig;
+	Fz fig;
 	
 	public static LinkedList<Figure> figures = new LinkedList();
 	

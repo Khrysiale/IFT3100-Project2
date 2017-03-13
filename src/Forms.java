@@ -24,7 +24,7 @@ public abstract class Forms implements Drawable, ItemListener, ActionListener{
 		
 	}
 	
-	//Le rôle de cette méthode est d’appeler les commandes de tracé
+	//Le rï¿½le de cette mï¿½thode est dï¿½appeler les commandes de tracï¿½
 	//du contexte graphique g
 	public abstract void draw(Graphics g);
 	public abstract double distance(Point p);

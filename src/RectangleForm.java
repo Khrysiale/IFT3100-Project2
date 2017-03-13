@@ -44,7 +44,7 @@ public class RectangleForm extends Figure{
 
 
 	@Override
-	public void draw(Graphics g, int échelle) {
+	public void draw(Graphics g, int ï¿½chelle) {
 		// TODO Auto-generated method stub
 		
 	}
