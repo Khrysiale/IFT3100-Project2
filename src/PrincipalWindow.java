@@ -34,11 +34,13 @@ import javax.swing.WindowConstants;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-/*oraganide les elements de l'interface*/
-public class PrincipalWindow extends JFrame implements ActionListener{
+//Fenetre Principale
+/*oraganise organise tous les éléments de l’interface*/
+
+public class PrincipalWindow extends JFrame {// implements ActionListener{
 	
-	Dimension size;
-	Drawable objet;
+	//Dimension size;
+	//Drawable objet;
 	
 	private JPanel contentPane = null;
 	
@@ -341,7 +343,7 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 		}else if(e.getSource().equals(tintMenu)){
 			onTint();
 		}else if(e.getSource().equals(pointMenu)){
-			onPoint(size.getWidth()/4, size.getHeight()/4);
+			//onPoint(size.getWidth()/4, size.getHeight()/4);
 		}else if(e.getSource().equals(rectangleMenu)){
 			onRectangle();
 		}else if(e.getSource().equals(lineMenu)){
@@ -405,8 +407,8 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 		if(chooser.showOpenDialog(this)== JFileChooser.APPROVE_OPTION){
 			//File[] files = fileOpenImage.getSelectedFiles().getAbsolutePath();
 			File file = chooser.getSelectedFile();
-			Picture img = new Picture(null, null, size);
-			img.importImage(file);
+			//Picture img = new Picture(null, null, size);
+			//img.importImage(file);
 		}		
 	}
 
@@ -613,8 +615,6 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 	}
 
 	private void onRectangle() {
-		RectangleForm rect = new RectangleForm(preserveBackgroundColor, null, size);
-		objet.add(rect);
 		
 	}
 
