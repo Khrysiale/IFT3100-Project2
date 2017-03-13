@@ -8,7 +8,9 @@ import java.util.LinkedList;
 
 import javax.swing.JPanel;
 
-//traite les evenements souri lies aux choix de dessin et choix mode
+//ZoneDessin
+/*traite les evenements souri lies aux choix de dessin et choix mode*/
+
 public class DrawZone extends JPanel implements MouseListener {
 
 	private static LinkedList figures = new LinkedList();

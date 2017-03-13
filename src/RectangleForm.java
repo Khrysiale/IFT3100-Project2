@@ -6,10 +6,10 @@ import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 
-public class RectangleForm extends Figure{
+public class RectangleForm extends Forms2D{
 
-	public RectangleForm(Color color, Point pos, Dimension dim) {
-		super(color, pos, dim);
+	public RectangleForm(Color color, Point pt1, Point pt2) {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -44,7 +44,7 @@ public class RectangleForm extends Figure{
 
 
 	@Override
-	public void draw(Graphics g, int échelle) {
+	public void draw(Graphics g, int ï¿½chelle) {
 		// TODO Auto-generated method stub
 		
 	}

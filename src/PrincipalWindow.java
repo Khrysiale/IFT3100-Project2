@@ -34,7 +34,9 @@ import javax.swing.WindowConstants;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-/*oraganide les elements de l'interface*/
+//Fenetre Principale
+/*oraganise organise tous les éléments de l’interface*/
+
 public class PrincipalWindow extends JFrame implements ActionListener{
 	
 	Dimension size;
