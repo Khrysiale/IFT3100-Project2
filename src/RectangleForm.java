@@ -1,26 +1,18 @@
 
+
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 
+
 public class RectangleForm extends Forms2D{
 
 	public RectangleForm(Color color, Point pt1, Point pt2) {
-		super();
+		super(color, pt2, pt2);
 		// TODO Auto-generated constructor stub
 	}
-
-
-	public void draw(Graphics g) {
-		Color c = g.getColor();
-		g.setColor(color);
-		g.fillRect(rect.x, rect.y, rect.height, rect.width);
-		g.setColor(c);
-	}
-
 
 	@Override
 	public void itemStateChanged(ItemEvent arg0) {
@@ -28,13 +20,17 @@ public class RectangleForm extends Forms2D{
 		
 	}
 
-
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	@Override
+	public void draw(Graphics g, int dimension) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
 	public double distance(Point p) {
@@ -42,9 +38,8 @@ public class RectangleForm extends Forms2D{
 		return 0;
 	}
 
-
 	@Override
-	public void draw(Graphics g, int �chelle) {
+	public void translate(Point a, Point b) {
 		// TODO Auto-generated method stub
 		
 	}

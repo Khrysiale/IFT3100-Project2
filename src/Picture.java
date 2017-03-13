@@ -1,9 +1,4 @@
-/**
- * @author Sandra
- * @param 
- *
- * precondtion: 
- */
+
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -32,7 +27,7 @@ import javax.swing.JPanel;
  * param[in] pImage image choisi
  * param[in] pFile le nom du fichier image
  */
-public class Picture extends Figure {
+public class Picture  {
 
 	private BufferedImage bImg = null;
 	private String imgName = "";
@@ -41,10 +36,9 @@ public class Picture extends Figure {
 	
 	//constructor
 	public Picture(Color color, Point pos, Dimension dim){
-		super(color, pos, dim);
+		super();
     }
 	
-	@Override
 	public void draw(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		if(bImg != null){
@@ -144,29 +138,5 @@ public class Picture extends Figure {
 		}
 
 	}
-
-	@Override
-	public void itemStateChanged(ItemEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public double distance(Point p) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void draw(Graphics g, int échelle) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 }
