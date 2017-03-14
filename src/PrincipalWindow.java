@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -39,7 +40,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class PrincipalWindow extends JFrame implements ActionListener{
 	
-	//Dimension size;
+	//Dimension size
+	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+	double width = screenSize.getWidth();
+	double height = screenSize.getHeight();
 	//Drawable objet;
 	
 	//private JPanel contentPane = null;
