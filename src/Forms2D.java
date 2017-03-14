@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -8,7 +9,6 @@ import java.awt.event.ItemListener;
 import java.awt.geom.Point2D;
 import java.io.Serializable;
 
-import javafx.scene.control.Dialog;
 
 //Figure
 /* dont derive toutes les formes,
@@ -31,8 +31,8 @@ public abstract class Forms2D implements ItemListener, ActionListener, Serializa
 	//Le role de cette methode est d appeler les commandes de trace
 	//du contexte graphique g, dimension = nombre de pixels
 	public abstract void draw(Graphics g, int dimension);//ok
-	public abstract double distance(Point p);//ok mesurer la distance d’un point à celle-ci.
+	public abstract double distance(Point p);//ok mesurer la distance dï¿½un point ï¿½ celle-ci.
 	public abstract void translate(Point a, Point b);
-
-
+	
+	
 }

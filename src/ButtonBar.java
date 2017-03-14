@@ -6,8 +6,12 @@ import java.awt.event.ActionListener;
 
 public class ButtonBar extends DrawZone implements ActionListener{//ok
 
+	public ButtonBar() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
-	//indique quel est le dernier bouton sur lequel on a cliqué
+	//indique quel est le dernier bouton sur lequel on a cliquï¿½
 	/* mode dessin: Creation, affichage
 	 * mode selection: 
 	 * mode transl;ation:
