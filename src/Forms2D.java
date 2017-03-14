@@ -31,8 +31,8 @@ public abstract class Forms2D implements ItemListener, ActionListener, Serializa
 	//Le role de cette methode est d appeler les commandes de trace
 	//du contexte graphique g, dimension = nombre de pixels
 	public abstract void draw(Graphics g, int dimension);//ok
-	public abstract double distance(Point p);//ok mesurer la distance d’un point à celle-ci.
+	public abstract double distance(Point p);//ok mesurer la distance dï¿½un point ï¿½ celle-ci.
 	public abstract void translate(Point a, Point b);
-
-
+	
+	
 }

@@ -12,13 +12,18 @@ import javax.swing.JPanel;
 public class Drawable2D extends LinkedList{
 	
 	private int dimension = 0;
-	//Point position1;
-	//Point position2;
+	Point pos1;
+	Point pos2;
 	//Forms2D fig;
-	
 	public static LinkedList<Forms2D> figures = new LinkedList();//ok
 	
-	
+	public Drawable2D(int dimension, Point pos1, Point pos2) {
+		super();
+		this.dimension = dimension;
+		this.pos1 = pos1;
+		this.pos2 = pos2;
+	}
+
 	public static void add(Forms2D f) {//ok
 		figures.add(f);
 	}

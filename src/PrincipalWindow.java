@@ -42,7 +42,8 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 	//Dimension size;
 	//Drawable objet;
 	
-	private JPanel contentPane = null;
+	//private JPanel contentPane = null;
+	DrawZone pan;
 	private final JMenuBar menuBar = new JMenuBar();
 	
 	/*   MENU AND SUB MENU FILE */
@@ -111,8 +112,10 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 		super();
 		setBounds(150, 100,1000,600);
 		setTitle("SanKhrys application graphic ");
-		contentPane = new JPanel();
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+		//contentPane = new JPanel();
+		pan = new DrawZone();
+		setContentPane(pan);//nouveau
 				
 		try {
 			createMenu();
@@ -628,7 +631,7 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 	private void onFilter() {
 
 		System.out.println("appel convolution");
-		contentPane.getComponents();//MyImage img = new MyImage(getCurrentId());
+		pan.getComponents();//MyImage img = new MyImage(getCurrentId());
 		int x = 0;
 		int y = 0;
 		
@@ -636,7 +639,7 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 		new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_INT_RGB);;		 
 		//bImg.filterImage();
 		//object.add(img);
-		contentPane.repaint();
+		pan.repaint();
 
 	}
 
