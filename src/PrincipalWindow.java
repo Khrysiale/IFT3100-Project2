@@ -35,15 +35,14 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 //Fenetre Principale
-/*oraganise organise tous les éléments de l’interface*/
+/*organise organise tous les element de l interface*/
 
-public class PrincipalWindow extends JFrame {// implements ActionListener{
+public class PrincipalWindow extends JFrame implements ActionListener{
 	
 	//Dimension size;
 	//Drawable objet;
 	
 	private JPanel contentPane = null;
-	
 	private final JMenuBar menuBar = new JMenuBar();
 	
 	/*   MENU AND SUB MENU FILE */
@@ -134,8 +133,6 @@ public class PrincipalWindow extends JFrame {// implements ActionListener{
 		
 	}
 
-	
-
 	private void createFileMenu() {
 		// construction du menu
 		setJMenuBar(menuBar);	
@@ -143,9 +140,9 @@ public class PrincipalWindow extends JFrame {// implements ActionListener{
 		fileMenu.setText("Fichier");
 		fileMenu.add(openMenu);
 		fileMenu.add(newFileMenu);	
-		//newFileMenu.addActionListener(this);
+		newFileMenu.addActionListener(this);
 		newFileMenu.setText("Nouveau");
-		//openMenu.addActionListener(this);
+		openMenu.addActionListener(this);
 		openMenu.setText("Ouvrir");
 
 
@@ -153,14 +150,14 @@ public class PrincipalWindow extends JFrame {// implements ActionListener{
 
 		fileMenu.add(saveMenu);
 		fileMenu.add(saveAsMenu);
-		//saveMenu.addActionListener(this);
+		saveMenu.addActionListener(this);
 		saveMenu.setText("Enregistrer");
 		saveAsMenu.setText("Enregistrer Sous");
-		//saveAsMenu.addActionListener(this);
+		saveAsMenu.addActionListener(this);
 		fileMenu.addSeparator();
 
 		fileMenu.add(quitMenu);
-		//quitMenu.addActionListener(this);
+		quitMenu.addActionListener(this);
 		quitMenu.setText("Quitter");
 
 	}
@@ -171,10 +168,10 @@ public class PrincipalWindow extends JFrame {// implements ActionListener{
 		EditMenu.setText("Edition");
 		EditMenu.add(undoMenu);
 		EditMenu.add(redoMenu);
-		//redoMenu.addActionListener(this);
+		redoMenu.addActionListener(this);
 		redoMenu.setText("Redo");
 		undoMenu.setText("Undo");
-		//undoMenu.addActionListener(this);
+		undoMenu.addActionListener(this);
 
 	}
 
@@ -185,20 +182,20 @@ public class PrincipalWindow extends JFrame {// implements ActionListener{
 		imageMenu.add(importMenu);
 		imageMenu.add(exportMenu);
 		
-		//importMenu.addActionListener(this);
+		importMenu.addActionListener(this);
 		importMenu.setText("Importer");
-		//exportMenu.addActionListener(this);
+		exportMenu.addActionListener(this);
 		exportMenu.setText("Exporter");
 		
 		imageMenu.addSeparator();
 		
 		imageMenu.add(filterMenu);
 		filterMenu.setText("Filtre");
-		//filterMenu.addActionListener(this);
-		//imageMenu.addSeparator();
+		filterMenu.addActionListener(this);
+		imageMenu.addSeparator();
 
 		imageMenu.add(tintMenu);
-		//tintMenu.addActionListener(this);
+		tintMenu.addActionListener(this);
 		tintMenu.setText("Teinte");
 	}
 
@@ -211,40 +208,40 @@ public class PrincipalWindow extends JFrame {// implements ActionListener{
 		drawing3DMenu.setText("Dessins 3D");
 		formMenu.add(drawing3DMenu);
 		drawing2DMenu.add(pointMenu);
-		//pointMenu.addActionListener(this);
+		pointMenu.addActionListener(this);
 		pointMenu.setText("Point");
 		drawing2DMenu.add(lineMenu);
-		//lineMenu.addActionListener(this);
+		lineMenu.addActionListener(this);
 		lineMenu.setText("Line");
 		drawing2DMenu.add(rectangleMenu);
-		//rectangleMenu.addActionListener(this);
+		rectangleMenu.addActionListener(this);
 		rectangleMenu.setText("Rectangle");
 
 		drawing2DMenu.add(triangleMenu);
-		//triangleMenu.addActionListener(this);
+		triangleMenu.addActionListener(this);
 		triangleMenu.setText("Triangle");
 		drawing2DMenu.add(squareMenu);
-		//squareMenu.addActionListener(this);
+		squareMenu.addActionListener(this);
 		squareMenu.setText("Carré");
 		drawing2DMenu.add(quadrilateralMenu);
-		//quadrilateralMenu.addActionListener(this);
+		quadrilateralMenu.addActionListener(this);
 		quadrilateralMenu.setText("Qualidratère");		
 		drawing2DMenu.add(ellipseMenu);
-		//ellipseMenu.addActionListener(this);
+		ellipseMenu.addActionListener(this);
 		ellipseMenu.setText("Ellipse");
 		drawing2DMenu.add(curveMenu);
-		//curveMenu.addActionListener(this);
+		curveMenu.addActionListener(this);
 		curveMenu.setText("Arc");
 		
 		drawing3DMenu.add(cubeMenu);
 		cubeMenu.setText("Cube");
-		//cubeMenu.addActionListener(this);
+		cubeMenu.addActionListener(this);
 		drawing3DMenu.add(tetrahedronMenu);
 		tetrahedronMenu.setText("Tetrahedron");
-		//tetrahedronMenu.addActionListener(this);
+		tetrahedronMenu.addActionListener(this);
 		drawing3DMenu.add(dodecahedronMenu);
 		dodecahedronMenu.setText("Dodecahedron");
-		//dodecahedronMenu.addActionListener(this);
+		dodecahedronMenu.addActionListener(this);
 		
 
 	}
@@ -254,39 +251,37 @@ public class PrincipalWindow extends JFrame {// implements ActionListener{
 		menuBar.add(toolsMenu);
 		toolsMenu.setText("Format");
 
-
 		toolsMenu.add(fillMenu);
-		//fillMenu.addActionListener(this);
+		fillMenu.addActionListener(this);
 		fillMenu.setText("Remplissage");
 		toolsMenu.addSeparator();
 
 		toolsMenu.add(strokeMenu);
-		//strokeMenu.addActionListener(this);
+		strokeMenu.addActionListener(this);
 		strokeMenu.setText("Contour");
 		strokeMenu.add(strokeColorMenu);
 		strokeColorMenu.setText("Couleur");
-		//strokeColorMenu.addActionListener(this);
+		strokeColorMenu.addActionListener(this);
 		strokeMenu.add(strokeWeightMenu);
 		strokeWeightMenu.setText("Epaisseur");
 		
-		//;
 		strokeWeightMenu.add(oneStroke);
 		strokeWeightMenu.add(twoStroke);
 		strokeWeightMenu.add(treeStroke);
 		strokeWeightMenu.add(fourStroke);
 		strokeWeightMenu.add(noStroke);
-		//oneStroke.addActionListener(this);
-		//twoStroke.addActionListener(this);
-		//treeStroke.addActionListener(this);
-		//fourStroke.addActionListener(this);
-		//noStroke.addActionListener(this);
+		oneStroke.addActionListener(this);
+		twoStroke.addActionListener(this);
+		treeStroke.addActionListener(this);
+		fourStroke.addActionListener(this);
+		noStroke.addActionListener(this);
 		oneStroke.setText("1");
 		twoStroke.setText("2");
 		treeStroke.setText("3");
 		fourStroke.setText("4");
 		noStroke.setText("Sans contour");
-
 	}
+	
 	
 	private void createCameraMenu() {
 		
@@ -301,20 +296,18 @@ public class PrincipalWindow extends JFrame {// implements ActionListener{
 		modeProjectionMenu.add(perspectiveMenu);
 		modeProjectionMenu.add(orthogonalMenu);
 		perspectiveMenu.setText("Perspective");
-		//perspectiveMenu.addActionListener(this);
+		perspectiveMenu.addActionListener(this);
 		orthogonalMenu.setText("Orthogonale");
-		
-		//orthogonalMenu.addActionListener(this);
-
+		orthogonalMenu.addActionListener(this);
 	}
 
+	
 	private void createHelpMenu(){
 		menuBar.add(helpMenu);
 		helpMenu.setText("Aide");
 		helpMenu.add(aboutMenu);
-		//aboutMenu.addActionListener(this);
+		aboutMenu.addActionListener(this);
 		aboutMenu.setText("A propos");
-
 	}
 
 
@@ -383,19 +376,18 @@ public class PrincipalWindow extends JFrame {// implements ActionListener{
 		}else if(e.getSource().equals(orthogonalMenu)){
 			onOrthogonalMenu();
 		}
-		
 	}
 	
-
 	
 	private void onOpenMenu() {
 		// TODO Auto-generated method stub
 		
 	}
 
+	
 	/**
 	 * Fonction d'importation d'une image
-	 * l'image est ensuite placé dans le tableau d'object qui sera rendu dans la zone de travail
+	 * l'image est ensuite place dans le tableau d'object qui sera rendu dans la zone de travail
 	 */
 	private void onImport() {
 		JFileChooser chooser = new JFileChooser();

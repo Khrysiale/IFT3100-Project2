@@ -26,8 +26,8 @@ public class DrawZone extends JPanel implements MouseListener {//ok
 	
 	
 	public void paint(Graphics g) {//ok
-		//super.paint(g);
-		/*for (Iterator iter = iterator(); iter.hasNext();) {
+		super.paint(g);
+		/*for (Iterator iter = this.iterator(); iter.hasNext();) {
 			Forms2D d = (Forms2D) iter.next();
 			d.draw(g, dimension);	
 		}*/
