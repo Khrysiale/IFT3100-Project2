@@ -11,7 +11,7 @@ import javax.swing.JPanel;
  */
 public class Drawable2D extends LinkedList{
 	
-	private int ladder = 0;
+	private int dimension = 0;
 	Point pos1;
 	Point pos2;
 	//Forms2D fig;
