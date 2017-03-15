@@ -344,9 +344,8 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 		}else if(e.getSource().equals(tintMenu)){
 			onTint();
 		}else if(e.getSource().equals(pointMenu)){
-			Random random1 = new Random((long) width);
-			Random random2 = new Random((long) height);
-			onPoint(random1.nextInt(),random2.nextInt());
+			
+			//pan.onPoint();
 		}else if(e.getSource().equals(rectangleMenu)){
 			onRectangle();
 		}else if(e.getSource().equals(lineMenu)){

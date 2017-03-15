@@ -28,7 +28,8 @@ public class DrawZone extends JPanel implements MouseListener {//ok
 	private Dimension screen= Toolkit.getDefaultToolkit().getScreenSize();
 	Point pt1;
 	Point pt2;
-	private Forms2D dessin;//nouveau
+	private Forms2D drawing;//nouveau
+	public String flag="",flag2="";
 			
 	public DrawZone(){//ok
 		super();
