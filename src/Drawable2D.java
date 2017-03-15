@@ -11,7 +11,7 @@ import javax.swing.JPanel;
  */
 public class Drawable2D extends LinkedList{
 	
-	private int dimension = 0;
+	private int ladder = 0;
 	Point pos1;
 	Point pos2;
 	//Forms2D fig;
@@ -32,7 +32,7 @@ public class Drawable2D extends LinkedList{
 		figures.remove(f);
 	}
 	
-	public static Forms2D plusProche(Point p){//ok
+	public static Forms2D closer(Point p){//ok (plusproche)
 		return null;
 		
 	}

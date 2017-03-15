@@ -1,7 +1,9 @@
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.List;
 import java.awt.Point;
+import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Iterator;
@@ -15,16 +17,23 @@ import javax.swing.JPanel;
 
 public class DrawZone extends JPanel implements MouseListener {//ok
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4183267487055896483L;
 	//private JButton colorButton;//test	
-	public static final int dimension = 0;//ok
+	
+	public static final int ladder = 0;//ok  -> échelle ce n'est pas une dimension. et dimension est un mot clé de java awt
+	
+	private Dimension screen= Toolkit.getDefaultToolkit().getScreenSize();
 	Point pt1;
 	Point pt2;
 	private Forms2D dessin;//nouveau
 			
 	public DrawZone(){//ok
 		super();
-		Drawable2D dessin;//???
-		this.addMouseListener(this);//nouveau
+		Drawable2D drawing = new Drawable2D(ladder, pt1, pt1);//???
+		this.addMouseListener(this);//nouveau (jcomprend pas pourquoi on passe this on a déclarer aucun mouseListerner
 		//ButtonBar bb;
 	}		
 	
@@ -34,6 +43,10 @@ public class DrawZone extends JPanel implements MouseListener {//ok
 			Forms2D d = (Forms2D) iter.next();
 			d.draw(g, dimension);	
 		}*/
+	}
+	
+	public void currentMode(){
+		
 	}
 
 
