@@ -19,12 +19,12 @@ public abstract class Forms2D implements ItemListener, ActionListener, Serializa
 	
 	protected Dialog dialog;//ok
 	protected Color color;//ok
-	protected int dimension;//nombre de pixels
-	protected Point p1, p2;//ok
+	protected int dim;//nombre de pixels
+	protected Point pt1, pt2;//ok
 	//protected Rectangle rect;
 	//protected Point2D.Double pt;
 		
-	public Forms2D(Color color, Point pt1, Point pt2){
+	public Forms2D(Color color, Point p1, Point p2){
 		
 	}
 	
