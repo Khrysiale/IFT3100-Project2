@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -32,6 +33,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JToolBar;
 import javax.swing.WindowConstants;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -48,7 +50,9 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 	//Drawable objet;
 	
 	//private JPanel contentPane = null;
-	DrawZone pan;
+	DrawZone pan = new DrawZone();;
+	
+	private final JToolBar buttonBar = new JToolBar("Outils", 1); 
 	private final JMenuBar menuBar = new JMenuBar();
 	
 	/*   MENU AND SUB MENU FILE */
@@ -119,8 +123,10 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 		setTitle("SanKhrys application graphic ");
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		//contentPane = new JPanel();
-		pan = new DrawZone();
+		//pan = new DrawZone();
 		setContentPane(pan);//nouveau
+
+		
 				
 		try {
 			createMenu();
@@ -250,8 +256,6 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 		drawing3DMenu.add(dodecahedronMenu);
 		dodecahedronMenu.setText("Dodecahedron");
 		dodecahedronMenu.addActionListener(this);
-		
-
 	}
 
 
@@ -317,8 +321,7 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 		aboutMenu.addActionListener(this);
 		aboutMenu.setText("A propos");
 	}
-
-
+	
 	/* LISTENER DES JMENUITEM*/
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(openMenu))	{
