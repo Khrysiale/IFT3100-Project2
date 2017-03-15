@@ -8,6 +8,11 @@ import java.awt.event.ItemEvent;
 
 public class PointForm  extends Forms2D{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4127110439920773933L;
+
 	public PointForm(Color color, Point pt1, Point pt2){
 		super(color, pt2, pt2);
 	}

@@ -17,6 +17,10 @@ import java.io.Serializable;
  */
 public abstract class Forms2D implements ItemListener, ActionListener, Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1713682929136814987L;
 	protected Dialog dialog;//ok
 	protected Color color;//ok
 	protected int dim;//nombre de pixels
