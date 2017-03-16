@@ -34,9 +34,7 @@ public class Drawable2D extends LinkedList<Object>{//public class Drawable2D ext
 		this.pt2 = p2;
 	}*/
 	
-    /**
-     * Crée une nouvelle liste de Figures Dssinables
-     */
+    
     public Drawable2D(){
 	super();
     }

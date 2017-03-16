@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 
+
 //ZoneDessin
 /*traite les evenements souris lies aux choix de dessin et choix mode*/
 
@@ -27,16 +28,18 @@ public class DrawZone extends JPanel implements MouseListener {//ok
 	public static final int dimension = 0;//ok  -> échelle ce n'est pas une dimension. et dimension est un mot clé de java awt
 	public String flag = "";
 	private Dimension screen= Toolkit.getDefaultToolkit().getScreenSize();
-	private Point pt1, pt2, pt3;
+	private Point2D pt1, pt2, pt3;
 	private Forms2D drawing;//nouveau
-	private Color couleur = Color.black;
+	private Color couleur = Color.magenta;
 	RectangleForm rectangle; 
 	
 			
 	public DrawZone(){//ok
 		super();
-		Drawable2D drawing = new Drawable2D();//???
-		this.addMouseListener(this);//nouveau (jcomprend pas pourquoi on passe this on a déclarer aucun mouseListerner
+		setPreferredSize(new Dimension(400,250));
+                
+		//Drawable2D drawing = new Drawable2D();//???
+		//this.addMouseListener(this);//nouveau (jcomprend pas pourquoi on passe this on a déclarer aucun mouseListerner
 		//ButtonBar bb;
 	}		
 	
@@ -90,7 +93,7 @@ public class DrawZone extends JPanel implements MouseListener {//ok
 		if (flag.equals("rect_draw")) {
 			pt2 = e.getPoint();
 			rectangle = new RectangleForm(couleur, pt1, pt2);
-            Drawable2D.add(rectangle);
+            //Drawable2D.add(rectangle);
             repaint(); }
 	}	
 		

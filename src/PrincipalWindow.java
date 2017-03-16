@@ -52,7 +52,7 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 	//Drawable objet;
 	
 	//private JPanel contentPane = null;
-	public DrawZone pan = new DrawZone();;
+	private DrawZone pan = new DrawZone();;
 	
 	private final JToolBar standard = new JToolBar("Outils", 1); ///////////****//////
 	private final JButton couleur = new JButton();
@@ -354,7 +354,10 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 		}else if(e.getSource().equals(pointMenu)){
 			//pan.onPoint();
 		}else if(e.getSource().equals(rectangleMenu)){
-			onRectangle();
+			//onRectangle();
+			pan.flag = "rectangle";
+			System.out.println("choix:rectangle");
+			
 		}else if(e.getSource().equals(lineMenu)){
 			onLine();
 		}else if(e.getSource().equals(squareMenu)){
@@ -623,7 +626,6 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 	}
 
 	private void onRectangle() {
-		pan.flag = "rectangle";
 	}
 
 	private void onPoint(double x, double y) {
