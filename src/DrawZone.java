@@ -6,11 +6,13 @@ import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.geom.Point2D;
 import java.util.Iterator;
 import java.util.LinkedList;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
 
 //ZoneDessin
 /*traite les evenements souris lies aux choix de dessin et choix mode*/
@@ -22,18 +24,18 @@ public class DrawZone extends JPanel implements MouseListener {//ok
 	 */
 	private static final long serialVersionUID = 4183267487055896483L;
 	//private JButton colorButton;//test	
-	
 	public static final int dimension = 0;//ok  -> échelle ce n'est pas une dimension. et dimension est un mot clé de java awt
-	
+	public String flag = "";
 	private Dimension screen= Toolkit.getDefaultToolkit().getScreenSize();
-	Point pt1;
-	Point pt2;
+	private Point pt1, pt2, pt3;
 	private Forms2D drawing;//nouveau
-	public String flag="",flag2="";
+	private Color couleur = Color.black;
+	RectangleForm rectangle; 
+	
 			
 	public DrawZone(){//ok
 		super();
-		Drawable2D drawing = new Drawable2D(dimension, pt1, pt1);//???
+		Drawable2D drawing = new Drawable2D();//???
 		this.addMouseListener(this);//nouveau (jcomprend pas pourquoi on passe this on a déclarer aucun mouseListerner
 		//ButtonBar bb;
 	}		
@@ -74,16 +76,23 @@ public class DrawZone extends JPanel implements MouseListener {//ok
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		pt1 = e.getPoint();
+		if(flag.equals("rectangle")) {
+			pt1 = e.getPoint();
+			//liste.add(new Point2D.Double(pt1));
+            System.out.println("premier point" + pt1);
+		}
 	}
 
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		pt2 = e.getPoint();
 		
-	}
-	
+		if (flag.equals("rect_draw")) {
+			pt2 = e.getPoint();
+			rectangle = new RectangleForm(couleur, pt1, pt2);
+            Drawable2D.add(rectangle);
+            repaint(); }
+	}	
 		
 	
 	

@@ -7,6 +7,7 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -34,6 +35,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JToolBar;
+import javax.swing.KeyStroke;
 import javax.swing.WindowConstants;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -50,9 +52,10 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 	//Drawable objet;
 	
 	//private JPanel contentPane = null;
-	DrawZone pan = new DrawZone();;
+	public DrawZone pan = new DrawZone();;
 	
-	private final JToolBar buttonBar = new JToolBar("Outils", 1); 
+	private final JToolBar standard = new JToolBar("Outils", 1); ///////////****//////
+	private final JButton couleur = new JButton();
 	private final JMenuBar menuBar = new JMenuBar();
 	
 	/*   MENU AND SUB MENU FILE */
@@ -125,7 +128,6 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 		//contentPane = new JPanel();
 		//pan = new DrawZone();
 		setContentPane(pan);//nouveau
-
 		
 				
 		try {
@@ -322,6 +324,9 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 		aboutMenu.setText("A propos");
 	}
 	
+	// construction de la barre de bouton
+	
+	
 	/* LISTENER DES JMENUITEM*/
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(openMenu))	{
@@ -347,7 +352,6 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 		}else if(e.getSource().equals(tintMenu)){
 			onTint();
 		}else if(e.getSource().equals(pointMenu)){
-			
 			//pan.onPoint();
 		}else if(e.getSource().equals(rectangleMenu)){
 			onRectangle();
@@ -619,7 +623,7 @@ public class PrincipalWindow extends JFrame implements ActionListener{
 	}
 
 	private void onRectangle() {
-		
+		pan.flag = "rectangle";
 	}
 
 	private void onPoint(double x, double y) {

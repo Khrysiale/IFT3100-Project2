@@ -9,13 +9,13 @@ import javax.swing.JPanel;
  * permet d ajouter ou de supprimer facilement une figure 
  * et qui peut renvoyer la figure la plus proche d un point donné.
  */
-public class Drawable2D extends LinkedList<Object>{
+public class Drawable2D extends LinkedList<Object>{//public class Drawable2D extends LinkedList<Object>{
 	
-<<<<<<< HEAD
+
 	private int ladder = 0;
 	Point pt1;
 	Point pt2;
-=======
+
 	/**
 	 * 
 	 */
@@ -23,23 +23,30 @@ public class Drawable2D extends LinkedList<Object>{
 	private int dimension = 0;
 	Point pos1;
 	Point pos2;
->>>>>>> origin/master
+
 	//Forms2D fig;
-	public static LinkedList<Forms2D> figures = new LinkedList<Forms2D>();//ok
+	/*public static LinkedList<Forms2D> figures = new LinkedList<Forms2D>();//ok
 	
-	public Drawable2D(int dimension, Point p1, Point p2) {
+	public Figure(int dimension, Point p1, Point p2) {
 		super();
 		this.dimension = dimension;
 		this.pt1 = p1;
 		this.pt2 = p2;
-	}
+	}*/
+	
+    /**
+     * Crée une nouvelle liste de Figures Dssinables
+     */
+    public Drawable2D(){
+	super();
+    }
 
 	public static void add(Forms2D f) {//ok
-		figures.add(f);
+		Drawable2D.add(f);
 	}
 
 	public static void remove(Forms2D f) {//ok
-		figures.remove(f);
+		Drawable2D.remove(f);
 	}
 	
 	public static Forms2D closer(Point p){//ok (plusproche)
@@ -52,7 +59,6 @@ public class Drawable2D extends LinkedList<Object>{
 	}
 
 	public void clear() {
-		figures.clear();
 	}
 	
 }
